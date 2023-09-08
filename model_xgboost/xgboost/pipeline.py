@@ -1,17 +1,11 @@
-# Save trained model to pkl file
-import pickle
-# Import model methods
 from train_model import train
 from predict_model import test
+from utils.model_services import save_model_to_pkl
 
-data_path = "/home/leticia/GitHub/Data-Science-Projects/model_xgboost/data/raw_data.csv"
+if __name__ == 'main':
+    data_path = "/home/leticia/GitHub/Data-Science-Projects/model_xgboost/data/raw_data.csv"
 
-# Train model
-model = train(data_path)
-# Test model
-test(data_path)
+    trained_model = train(data_path)
+    test(data_path)
 
-# Save model to pkl file
-model_pkl_file = "/home/leticia/GitHub/Data-Science-Projects/model_xgboost/models/xgboost_model.pkl"  
-with open(model_pkl_file, 'wb') as file:  
-    pickle.dump(model, file)
+    save_model_to_pkl("/home/leticia/GitHub/Data-Science-Projects/model_xgboost/models/xgboost_model.pkl", trained_model)

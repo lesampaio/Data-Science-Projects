@@ -41,4 +41,6 @@ python pipeline.py
         │   │   ├── predict_model.py
         │   │   └── train_model.py
         │   │
+        │   ├── utils                   <- Utils packages for classes and methods
+        │   │
         │   └── tests                   <- Tests folder
